@@ -2,11 +2,6 @@ var express = require('express');
 var router = express.Router();
 const UserTable = require('../models/userModel')
 
-/* GET users api test. */
-router.get('/', function(req, res, next) {
-  res.send('User route api is working');
-});
-
 /* CREATE User */
 router.post('/create', async (req, res) => {
   try {
