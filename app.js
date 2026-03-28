@@ -25,9 +25,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // MongoDB Connection 
-mongoose.connect('mongodb+srv://vikram:Test123@student.asucsow.mongodb.net/?retryWrites=true&w=majority&appName=studentdb')
-
-// mongoose.connect('mongodb://localhost:27017/?retryWrites=true&w=majority&appName=userdb')
+mongoose.connect('mongodb://localhost:27017/?retryWrites=true&w=majority&appName=userdb')
 .then(() => console.log("MongoDB database Connected"))
 .catch(err => console.log(err))
 
