@@ -21,6 +21,10 @@ MongoDB database Connected"
 7. Open localhost:3000 in any browser
 8. output will be "Welcome to Express"
 
+#For react app
+1. inside application go to studentui folder
+2. run ->npm run start 
+
 Setup required for this project :
 1. Nodejs : https://nodejs.org/en/download
 2. Mongodb :https://www.mongodb.com/products/self-managed/community-edition
