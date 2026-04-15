@@ -14,7 +14,7 @@ function StudentList(props) {
         <tr>
           <td>{props.id}</td>
           <td>{props.name}</td>
-          <td>{props.mark>40?"Pass":"Fail"}</td>
+          <td>{props.email}</td>
         </tr>
       </tbody>
     </table>

@@ -1,20 +1,36 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+
+const LoginPage = ({ onLogin }) => {
+  const navigate = useNavigate();
   // State for form fields
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const login = async (e) => {
     e.preventDefault();
     console.log("Login Details:", { email, password });
-    // Add authentication logic here (e.g., calling an API)
+    const response = await fetch('http://localhost:5000/users/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    })
+    const data = await response.json();
+    if (data.error) {
+      alert(data.error);
+    } else {
+      alert('Login successful');
+      localStorage.setItem("userName", data.user.name);
+      onLogin();
+      navigate("/");
+    }
   };
 
   return (
     <div style={styles.container}>
-      <form onSubmit={handleSubmit} style={styles.form}>
+      <form onSubmit={login} style={styles.form}>
         <h2>Login</h2>
         <div style={styles.inputGroup}>
           <label htmlFor="email">Email</label>

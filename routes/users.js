@@ -2,6 +2,19 @@ var express = require('express');
 var router = express.Router();
 const UserTable = require('../models/userModel')
 
+/* Login User */
+router.post('/login', async (req, res) => {
+  try {
+    const result = await UserTable.findOne({ email: req.body.email, password: req.body.password })
+    if (!result) {
+      return res.status(401).json({ error: "Invalid email or password" })
+    }
+    return res.json({ message: "Login successful", user: result })
+  } catch (err) {
+    res.status(500).json({ error: err.message })
+  }
+})
+
 /* CREATE User */
 router.post('/create', async (req, res) => {
   try {
