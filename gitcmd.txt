@@ -1,0 +1,21 @@
+clone -  for cloning/downloading the repo-code
+pull - get latest code updated in local 
+push - to push local changes to server 
+status - to check local changes 
+diff - to check changes in file local
+checkout - this is for reset the local changes
+git add . - to commit to add  all file to server
+
+branch - 
+git checkout -b "branchname"   (For create a new branch )
+to check branch - git status
+
+ git commit -m "message " - to provide message to server
+ 
+git pull origin vikram 
+
+git clone
+go to folder (clone place)
+cmd -> npm i
+cd studentui (react) ->cmd -> npm i 
+npm run start
