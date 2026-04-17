@@ -39,7 +39,7 @@ function StudentDashboard({ onLogout }) {
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <label class="navbar-brand">Welcome {userName}</label>
-          <Link to='/about'>About</Link>
+          <Link to='/about'>Test </Link>
           <form class="d-flex">
             <button class="btn btn-outline-success" onClick={onLogout}>Logout</button>
           </form>
